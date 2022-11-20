@@ -1,0 +1,20 @@
+# Extensions
+*.diff
+*.err
+*.log
+*.swp
+
+# Editor and OS
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.idea
+.tmp
+
+# Build
+node_modules
+dist
+
+# Project ignores

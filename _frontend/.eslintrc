@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+  ],
+  "rules": {
+    "comma-dangle": 0,
+    "import/no-named-as-default": 0,
+    "no-multi-spaces": ["error", { "exceptions": { "VariableDeclarator": true, "ImportDeclaration": true } }],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-underscore-dangle": 0,
+    "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true, "allowTaggedTemplates": true }],
+    "no-unused-vars": ["error", { "args": "none" }],
+    "object-curly-newline": 0,
+    "prefer-arrow-callback": 1,
+    "prefer-const": 1, // We want to allow using 'let' for arrays
+    "radix": ["error", "as-needed"]
+  },
+  "globals": {
+    // "google": true
+  },
+  "settings": {
+  }
+}

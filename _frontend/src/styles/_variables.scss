@@ -1,0 +1,36 @@
+// Stacking
+// $zindex-nav: 100;
+
+// Colors
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Font weights
+$fw-light: 300;
+$fw-regular: 400;
+$fw-normal: $fw-regular; // alias
+$fw-book: $fw-regular;   // alias
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// Fonts
+$ff-open-sans: 'Open Sans', sans-serif;
+
+// Media query sizes
+$breakpoints: (
+  'tiny': rem(475px),
+  'small': rem(768px),
+  'smedium': rem(1024px),
+  'medium': rem(1280px),
+  'large': rem(1440px),
+  'xlarge': rem(1600px)
+);
+
+$unit-intervals: (
+  'px': 1,
+  'em': .0625,
+  'rem': .0625,
+  '': 0
+);
+
