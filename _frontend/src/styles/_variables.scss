@@ -1,9 +1,22 @@
 // Stacking
 // $zindex-nav: 100;
 
+:root {
+  --c-text: #023047;
+  --c-white: #FFFFFF;
+  --c-primary: #CCEED3;
+  --c-secondary: #CCDCEE;
+  --ff-primary: 'helvetica', 'arial', 'sans-serif';
+  --fw-bold: 700;
+  --fw-normal: 400;
+  --fw-regular: 400;
+}
+
 // Colors
 $color-white: #ffffff;
 $color-black: #000000;
+$color-blue-dark: #023047;
+$color-green: #CCEED3;
 
 // Font weights
 $fw-light: 300;
