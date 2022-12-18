@@ -1,8 +1,8 @@
-<?php  
-  $title = $args['title'];
-  $content = nl2br($args['content']);
-  $image = $args['image'];
-  $button = $args['button'];
+<?php
+  $fields = get_field('hero');
+  $title = $fields['title'];
+  $content = nl2br($fields['text']);
+  $button = get_field('apply_link');
 ?>
 
 <div class="hero">
@@ -14,7 +14,7 @@
       <p class="hero__text">
         <?= $content ?>
       </p>
-      <?php Helpers::renderPartial('button', $button) ?>
+      <?php Helpers::renderPartial('button', array_merge($button, ['class' => 'button--shake'])) ?>
     </div>
   </div>
 </div>

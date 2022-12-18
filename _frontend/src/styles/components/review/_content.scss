@@ -1,0 +1,13 @@
+.review-content {
+  max-width: width(900, '%');
+  margin-bottom: rem(80px);
+
+  &__title {
+    @include heading(2);
+    margin-bottom: rem(50px);
+  }
+
+  &__text {
+    @include wysiwyg;
+  }
+}

@@ -1,0 +1,57 @@
+@mixin container {
+  max-width: rem(1260px);
+  padding: rem(0 15px);
+  margin: 0 auto;
+}
+
+@mixin text($size:normal) {
+  font-family: var(--ff-primary);
+  font-size: var(--fz-body);
+  line-height: 1.5;
+
+  @if $size == 'small' {
+    font-size: rem(14px);
+  }
+}
+
+@mixin heading($size) {
+  font-weight: var(--fw-bold);
+  font-family: var(--ff-primary);
+
+  $scale: 1.414;
+  $largest: rem(80px);
+
+  @if $size == 1 {
+    @include poly-fluid-sizing(font-size, (
+      'tiny': $largest * .75,
+      'large': $largest
+    ));
+    line-height: .96;
+  }
+
+  @for $i from 2 through 6 {
+    @if $i == $size {
+      @include poly-fluid-sizing(font-size, (
+        'tiny': ( $largest / ( $scale * ( $i - 1 ) ) ) * .75,
+        'large': $largest / ( $scale * ( $i - 1 ) )
+      ));
+      line-height: .96 + ( $i * .09 );
+    }
+  }
+}
+
+@mixin wysiwyg {
+  @for $i from 1 through 6 {
+    h#{$i} {
+      @include heading($i);
+    }
+  }
+
+  p {
+    margin-bottom: rem(30px);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

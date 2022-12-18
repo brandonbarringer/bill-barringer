@@ -13,15 +13,20 @@
 @import 'poly-fluid-sizing';
 
 // Vendor
-@import 'vendor/normalize';
+@import 'vendor/reset';
 @import 'vendor/wordpress';
 
 // Globals
 @import 'global';
 
 // Components - Global
-// @import 'components/button';
+@import 'components/button';
 
 // Components - Main
-// @import 'components/nav';
-// @import 'components/footer';
+@import 'components/hero';
+@import 'components/review/reviews';
+@import 'components/review/card';
+@import 'components/review/bar';
+@import 'components/review/content';
+@import 'components/review/rating';
+@import 'components/cta';

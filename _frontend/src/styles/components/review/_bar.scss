@@ -1,0 +1,37 @@
+.reviews-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(30px);
+  background-color: var(--c-white);
+  border-radius: rem(12px);
+  box-shadow: 0 rem(4px) rem(16px) rgba($color-blue-dark, .04),
+              0 rem(8px) rem(32px) rgba($color-blue-dark, .04);
+  margin-top: rem(-50px);
+  position: relative;
+  z-index: 1;
+  max-width: width(900, '%');
+  margin-bottom: 100px;
+
+  &__stat {
+    display: flex;
+    align-items: baseline;
+    padding: rem(0 30px);
+    border-right: 1px solid var(--c-light);
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &__value {
+    @include heading(2);
+    line-height: 1;
+    margin-right: rem(5px);
+  }
+
+  &__label {
+    @include heading(4);
+    line-height: 1;
+  }
+}

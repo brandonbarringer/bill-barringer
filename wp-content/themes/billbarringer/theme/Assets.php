@@ -13,6 +13,11 @@ final class Assets {
         'handle' => 'main-styles',
         'source' => self::getUrl('styles/main.css', false),
         'enqueue' => true
+      ],
+      [
+        'handle' => 'font-styles',
+        'source' => 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap',
+        'enqueue' => true
       ]
     ];
 

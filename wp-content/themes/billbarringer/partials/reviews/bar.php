@@ -1,5 +1,19 @@
 <?php  
   $stats = $args['stats'];
+  $stats = [
+    [
+      'value' => 220,
+      'label' => 'Reviews'
+    ],
+    [
+      'value' => 4.96,
+      'label' => 'Average'
+    ],
+    [
+      'value' => 31,
+      'label' => 'Recent'
+    ],
+  ];
 ?>
 
 <div class="reviews-bar">

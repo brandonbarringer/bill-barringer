@@ -1,6 +1,6 @@
-<?php  
-  $text = $args['text'];
-  $link = $args['link'];
+<?php
+  $text = $args['title'];
+  $link = $args['url'];
   $class = $args['class'];
 ?>
 

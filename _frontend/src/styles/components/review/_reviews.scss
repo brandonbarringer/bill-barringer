@@ -1,0 +1,33 @@
+.reviews {
+  position: relative;
+  counter-reset: reviews;
+
+  &__container {
+    max-height: rem(1000px);
+    overflow: auto;
+    width: 100%;
+    padding-right: rem(20px);
+    clip-path: polygon(0 0, calc(100% - 20px) 0, calc(100% - 20px) 100%, 0 100%);
+  }
+
+  &__cards {
+    position: absolute;
+    top: 0;
+    right: rem(150px);
+    z-index: -1;
+
+    &:after {
+      content: '';
+      inset: 0;
+      position: absolute;
+      background: linear-gradient(
+        to bottom, 
+        #FFFFFF 0%,
+        rgba(255, 255, 255, 0) 30%, 
+        rgba(255, 255, 255, 0) 60%, 
+        #FFFFFF 100%
+      );
+      pointer-events: none;
+    }
+  }
+}

@@ -6,23 +6,10 @@
  */
 import 'svgxuse';
 import './sprites';
+import InfiniteScroll from './InfiniteScroll';
 
-/*
-reviews.auth().then(() => {
-  reviews.get({
-    app_id: process.env.EXPERIENCE_APP_ID,
-    app_secret: process.env.EXPERIENCE_APP_SECRET,
-    account_id: process.env.EXPERIENCE_ACCOUNT_ID,
-    agent_email: process.env.EXPERIENCE_AGENT_EMAIL,
-    auth_token: getState('api.authToken'),
-    field: 'rating',
-    page: 1,
-    limit: 10,
-  });
-});
+const reviewsContainer = document.querySelector('.reviews__container');
 
-watchState('reviews', (reviews) => {
-  renderReviews(reviews);
-});
+const reviews = new InfiniteScroll(reviewsContainer);
 
-*/
+reviews.init();

@@ -1,7 +1,8 @@
 <?php  
   $name = $args['name'];
   $text = nl2br($args['text']);
-  $rating = $args['rating'];
+  $rating = (string)$args['rating'];
+  $parts = explode('.', $rating);
   $image = $args['image'];
 ?>
 
@@ -17,28 +18,33 @@
       <?php endif ?>
     </div>
     <div class="review-card__content">
-      <div class="review-card__text">
-        <?= $text ?>
-      </div>
       <div class="review-card__name">
         <?= $name ?>
       </div>
-    </div>
-    <div class="review-card__rating rating">
-      <div class="rating__num">
-        <?= $rating ?>
+      <div class="review-card__text">
+        <?= $text ?>
       </div>
-      <div class="rating__stars">
-        <?php for($i = 0; $i < 5; $i++): ?>
-          <?php if ($i < $rating): ?>
-            <span class="rating__star rating__star--fill">
-              ★
-            </span>
-          <?php else: ?>
-            <span class="rating__star">
-              ★
-            </span>
+      <div class="review-card__rating rating">
+        <div class="rating__num">
+          <?= $rating ?>
+        </div>
+        <div class="rating__stars">
+          <?php for ($i = 0; $i < $parts[0]; $i++): ?>
+              <span class="rating__star">
+              </span>
+          <?php endfor ?>
+          <?php if ($parts[1] > 0 && $parts[0] < 5):  ?>
+            <span class="rating__star rating__star--half" style="--fill: <?= $parts[1] ?>%"></span>
+            <?php for ($i = $parts[0] + 1; $i < 5; $i++): ?>
+              <span class="rating__star rating__star--outline"></span>
+            <?php endfor ?>
+          <?php else:  ?>
+            <?php for ($i = $parts[0]; $i < 5; $i++): ?>
+              <span class="rating__star rating__star--outline"></span>
+            <?php endfor ?>
           <?php endif ?>
-        <?php endfor ?>
+        </div>
+      </div>
     </div>
   </div>
+</div>

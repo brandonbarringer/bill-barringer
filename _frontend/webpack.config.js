@@ -126,8 +126,8 @@ module.exports = (env, argv) => {
       minimizer: [new TerserPlugin()],
     },
     output: {
-      publicPath: '/assets/',
-      path: path.join(__dirname, 'dist/assets'),
+      publicPath: '/wp-content/themes/billbarringer/assets/',
+      path: path.join(__dirname, '../wp-content/themes/billbarringer/assets'),
       filename: `scripts/${namePattern}.js`,
       chunkFilename: `scripts/${namePattern}.bundle.js`
     },

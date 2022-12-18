@@ -1,0 +1,52 @@
+.rating {
+  display: flex;
+  align-items: center;
+  gap: rem(5px);
+  margin-bottom: rem(10px);
+
+  &__stars {
+    display: flex;
+    gap: rem(5px);
+  }
+
+  &__star {
+    color: #FFB703;
+    width: rem(15px);
+    height: rem(25px);
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      content: "\2605";
+      position: absolute;
+      color: #FFB703;
+      z-index: 0;
+      display: block;
+    }
+
+    &::after {
+      content: "\2605";
+      position: absolute;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #A68432;
+      position: relative;
+      z-index: 2;
+      display: block;
+      color: transparent;
+    }
+   
+    &--outline {
+      color: white;
+      &:before {
+        color: white;
+      }
+    }
+
+    &--half {
+      color: #FFB703;
+      &:before {
+        clip-path: polygon(0 0, var(--fill) 0, var(--fill) 100%, 0 100%);
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.hero {
+  background-color: var(--c-primary);
+  background-image: url(../images/hero.png);
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  padding: rem(250px 0);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 65% 100%, 0% 100%);
+
+  &__layout {
+    @include container;
+    display: grid;
+    grid-template-columns: width(761, '%') 1fr;
+  }
+
+  &__title {
+    @include heading(1);
+    margin-bottom: rem(20px);
+  }
+
+  &__text {
+    margin-bottom: rem(60px);
+  }
+}
