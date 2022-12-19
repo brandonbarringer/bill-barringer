@@ -1,0 +1,24 @@
+.contact {
+  background-color: var(--c-primary);
+  padding: rem(70px 0);
+  border-top: 1px solid var(--c-light);
+  text-align: center;
+
+  &__layout {
+    @include container;
+  }
+
+  &__content {
+    max-width: rem(800px);
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include heading(2);
+    margin-bottom: rem(40px);
+  }
+
+  &__phone {
+    @extend .button;
+  }
+}

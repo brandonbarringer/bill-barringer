@@ -1,0 +1,22 @@
+.blog {
+  padding: rem(100px 0);
+
+  &__content {
+    max-width: rem(800px);
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: rem(80px);
+  }
+
+  &__title {
+    @include heading(2);
+    margin-bottom: rem(50px);
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(300px), 1fr));
+    grid-template-rows: auto;
+    gap: rem(85px);
+  }
+}

@@ -1,6 +1,9 @@
 .review-content {
-  max-width: width(900, '%');
   margin-bottom: rem(80px);
+
+  @include media('>medium') {
+    max-width: width(900, '%');
+  }
 
   &__title {
     @include heading(2);

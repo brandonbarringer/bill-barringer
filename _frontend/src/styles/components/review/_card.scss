@@ -3,25 +3,34 @@
   border-radius: 12px;
   padding: rem(20px);
   margin-bottom: rem(50px);
-  max-width: width(295, px);
+  max-width: 100%;
   position: relative;
   z-index: 0;
-  
 
   $colors: 
     #FF9B85,
     #A4BEF3,
     #CCEED3,
     #FF7CAC;
-
-  @for $i from 1 through length($colors) {
-    &:nth-child(#{$i}n + 1) {
-      margin-left: random(100) * 1px;
+  
+  @for $i from 1 through 10 {
+    &:nth-child(10n+#{$i}) {
       .review-card__image {
-        background-color: nth($colors, $i);
+        background-color: nth($colors, $i % 4 + 1);
       }
     }
   }
+
+  @include media('>medium') {
+    max-width: width(295, px);
+    
+    @for $i from 1 through 10 {
+      &:nth-child(10n+#{$i}) {
+        margin-left: random(100) * 1px;
+      }
+    }
+  }
+
 
   &__layout {
     display: grid;
@@ -47,20 +56,11 @@
   &__name {
     @include heading(4);
     margin-bottom: rem(5px);
-
-    &:before {
-      counter-increment: reviews;
-      content: counter(reviews) " ";
-    }
   }
 
   &__text {
     @include text(small);
     margin-bottom: rem(10px);
     font-weight: var(--fw-semi);
-  }
-
-  &__rating {
-    
   }
 }

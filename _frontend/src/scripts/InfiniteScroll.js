@@ -10,7 +10,9 @@ class InfiniteScroll {
   }
 
   get positions() {
-    return Array.from(this.elements).map((el) => el.offsetTop + el.offsetHeight);
+    return this.isVertical
+      ? Array.from(this.elements).map((el) => el.offsetTop + el.offsetHeight)
+      : Array.from(this.elements).map((el) => el.offsetLeft + el.offsetWidth);
   }
 
   get anchor() {
@@ -19,12 +21,21 @@ class InfiniteScroll {
       : this.elements[0];
   }
 
-  get offset() {
-    return getComputedStyle(this.elements[0]).marginBottom;
+  // eslint-disable-next-line class-methods-use-this
+  get isDesktop() {
+    return matchMedia('(min-width: 1280px)').matches;
+  }
+
+  get isVertical() {
+    return this.isDesktop;
   }
 
   scroll() {
-    this.container.scrollTop += this.speed;
+    if (this.isVertical) {
+      this.container.scrollTop += this.speed;
+    } else {
+      this.container.scrollLeft += this.speed;
+    }
     requestAnimationFrame(this.scroll.bind(this));
   }
 
@@ -40,9 +51,13 @@ class InfiniteScroll {
   }
 
   checkScroll() {
-    if (this.container.scrollTop >= this.anchor.offsetTop) {
+    if (this.isVertical && this.container.scrollTop >= this.anchor.offsetTop) {
       this.loop();
-      this.container.scrollTop = this.anchor.offsetTop + this.offset;
+      this.container.scrollTop = 0;
+    }
+    if (!this.isVertical && this.container.scrollLeft >= this.anchor.offsetLeft) {
+      this.loop();
+      this.container.scrollLeft = 0;
     }
   }
 

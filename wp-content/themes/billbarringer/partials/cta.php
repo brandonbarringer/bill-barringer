@@ -1,6 +1,7 @@
-<?php  
-  $title = $args['title'];
-  $button = $args['button'];
+<?php
+  $fields = get_field('cta');
+  $title = $fields['title'];
+  $button = get_field('apply_link');
   $image = $args['image'];
 ?>
 
@@ -11,9 +12,6 @@
         <?= $title ?>
       </h2>
       <?php Helpers::renderPartial('button', $button) ?>
-    </div>
-    <div class="cta__image">
-      <?php Helpers::renderPartial('image', $image) ?>
     </div>
   </div>
 </div>

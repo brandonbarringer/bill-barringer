@@ -1,0 +1,17 @@
+.blog-card {
+  padding: rem(5px);
+  border-top: 3px solid var(--c-text);
+
+  &__title {
+    @include heading(4);
+    margin-bottom: rem(20px);
+
+    a {
+      color: var(--c-text);
+    }
+  }
+
+  &__text {
+    @include text(small);
+  }
+}

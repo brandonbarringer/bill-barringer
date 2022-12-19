@@ -4,13 +4,32 @@
   background-size: contain;
   background-position: bottom right;
   background-repeat: no-repeat;
-  padding: rem(250px 0);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 65% 100%, 0% 100%);
+  padding: rem(50px 0 500px 0);
+
+  @include media('>tiny') {
+    background-size: auto 500px;
+    padding: rem(100px 0 500px 0);
+  }
+
+  @include media('>small') {
+    background-size: auto 100%;
+    padding: rem(100px 0 100px 0);
+    background-position: bottom 120%;
+  }
+  
+
+  @include media('>medium') {
+    padding: rem(250px 0);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 65% 100%, 0% 100%);
+  }
 
   &__layout {
     @include container;
-    display: grid;
-    grid-template-columns: width(761, '%') 1fr;
+    
+    @include media('>small') {
+      display: grid;
+      grid-template-columns: width(761, '%') 1fr;
+    }
   }
 
   &__title {

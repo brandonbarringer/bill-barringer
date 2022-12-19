@@ -8,7 +8,7 @@
       <?= get_the_title($post) ?>
     </a>
   </h3>
-  <div class="blog-card__content">
-    <?= Helpers::getExcerpt($post, 30) ?>
+  <div class="blog-card__text">
+    <?= Helpers::getExcerpt($post, 40) ?>
   </div>
 </article>

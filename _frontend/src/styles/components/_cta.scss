@@ -1,1 +1,24 @@
-.cta {}
+.cta {
+  padding: rem(110px 0 250px 0);
+  background-color: var(--c-secondary);
+  background-image: url(../images/cta-long.png);
+  background-size: auto 200px;
+  background-position: center bottom;
+  background-repeat: repeat-x;
+
+  &__layout {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__title {
+    @include heading(2);
+    margin-bottom: rem(40px);
+  }
+}

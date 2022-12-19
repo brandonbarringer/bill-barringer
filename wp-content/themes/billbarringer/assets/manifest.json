@@ -1,4 +1,7 @@
 {
+  "images/cta-long.png": "images/cta-long.png",
+  "images/cta.png": "images/cta.png",
+  "images/cta.svg": "images/cta.svg",
   "images/hero.png": "images/hero.png",
   "main.css": "styles/main.css",
   "main.js": "scripts/main.js"

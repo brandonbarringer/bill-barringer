@@ -89,4 +89,10 @@ final class Helpers {
 
     return implode(' ', $attrs);
   }
+
+  public static function getExcerpt($post = null, $words = 20)
+  {
+    $excerpt = get_the_excerpt($post);
+    return wp_trim_words($excerpt, $words, '&hellip;');
+  }
 }

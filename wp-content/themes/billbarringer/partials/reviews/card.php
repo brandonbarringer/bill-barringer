@@ -1,7 +1,7 @@
 <?php  
-  $name = $args['name'];
-  $text = nl2br($args['text']);
-  $rating = (string)$args['rating'];
+  $name = $args['customer_first_name'];
+  $text = nl2br($args['review']);
+  $rating = $args['score'];
   $parts = explode('.', $rating);
   $image = $args['image'];
 ?>
