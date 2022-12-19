@@ -5,6 +5,10 @@
     @include heading(2);
     margin-bottom: rem(200px);
     hyphens: auto;
+
+    @include media('>tiny') {
+      hyphens: none;
+    }
   }
 
   &__content {
