@@ -4,7 +4,7 @@
 
 <?php if (have_posts()):  ?>
     <div class="post-single">
-      <div class="container">
+      <div class="container container--small">
         <?php while (have_posts()): the_post(); ?>
           <h1 class="post-single__title">
             <?php the_title(); ?>

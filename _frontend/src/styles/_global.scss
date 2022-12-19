@@ -33,4 +33,8 @@ img {
 
 .container {
   @include container;
+
+  &--small {
+    @include container(small);
+  }
 }

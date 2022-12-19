@@ -2,8 +2,9 @@
   padding: rem(200px 0);
 
   &__title {
-    @include heading(1);
+    @include heading(2);
     margin-bottom: rem(200px);
+    hyphens: auto;
   }
 
   &__content {

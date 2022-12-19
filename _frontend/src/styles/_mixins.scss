@@ -1,7 +1,11 @@
-@mixin container {
-  max-width: rem(1260px);
-  padding: rem(0 15px);
+@mixin container($size:normal) {
+  max-width: calc(#{rem(1260px)} + 20%);
+  padding: rem(0 10%);
   margin: 0 auto;
+
+  @if $size == 'small' {
+    max-width: calc(#{rem(720px)} + 20%);
+  }
 }
 
 @mixin text($size:normal) {
@@ -41,18 +45,46 @@
 }
 
 @mixin wysiwyg {
-  @for $i from 1 through 6 {
+  @for $i from 1 through 5 {
     h#{$i} {
-      @include heading($i);
+      @include heading($i + 1);
       margin-bottom: rem(30px);
     }
   }
 
   p {
     margin-bottom: rem(30px);
+  }
 
-    &:last-of-type {
-      margin-bottom: 0;
+  ul,
+  ol {
+    padding-left: 1.1em;
+    margin-bottom: rem(30px);
+
+    li {
+      padding: rem(5px 0 10px);
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+
+      &:before {
+        content: '\2022';
+        font-weight: bold;
+        display: inline-block;
+        margin-right: rem(10px);
+        margin-top: -1.5em;
+        font-size: 1.5em;
+        top: .1em;
+        position: relative;
+      }
     }
   }
 
@@ -63,6 +95,30 @@
 
     &:hover {
       text-decoration: none;
+    }
+  }
+
+  blockquote {
+    margin: rem(30px 0);
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      content: '\201C';
+      font-size: rem(80px);
+      font-weight: var(--fw-bold);
+      position: absolute;
+      left: rem(-30px);
+      top: rem(-20px);
+      color: var(--c-light);
+      line-height: 1;
+      z-index: -1;
+    }
+
+    @include media('>tiny') {
+      font-size: rem(120px);
+      left: rem(-80px);
+      top: rem(-20px);
     }
   }
 }

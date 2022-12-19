@@ -32,5 +32,10 @@ final class Hooks {
       $paths[] = __DIR__ . '/acf-json';
       return $paths;
     });
+
+    add_filter('tiny_mce_before_init', function($allowed) {
+      $allowed['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6';
+      return $allowed;
+    });
   }
 }
