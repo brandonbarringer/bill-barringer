@@ -116,9 +116,12 @@
     }
 
     @include media('>tiny') {
-      font-size: rem(120px);
-      left: rem(-80px);
-      top: rem(-20px);
+      &:before {
+        font-size: rem(120px);
+        left: rem(-80px);
+        top: rem(-20px);
+      }
+      
     }
   }
 }
