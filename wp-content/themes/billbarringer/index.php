@@ -22,7 +22,7 @@ get_header();
       </h2>
       <?php Helpers::renderPartial('button', [
         'title' => 'View All',
-        'url' => get_permalink(get_post_type_archive_link('post')),
+        'url' => get_post_type_archive_link('post'),
         'class' => 'button--dark'
       ])  ?>
     </div>
