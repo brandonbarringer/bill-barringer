@@ -1,0 +1,12 @@
+.post-single {
+  padding: rem(200px 0);
+
+  &__title {
+    @include heading(1);
+    margin-bottom: rem(200px);
+  }
+
+  &__content {
+    @include wysiwyg;
+  }
+}

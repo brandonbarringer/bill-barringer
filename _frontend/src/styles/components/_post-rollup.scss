@@ -1,0 +1,15 @@
+.post-rollup {
+  padding: rem(200px 0);
+
+  &__title {
+    @include heading(1);
+    margin-bottom: rem(200px);
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(300px), 1fr));
+    grid-template-rows: auto;
+    gap: rem(50px);
+  }
+}
