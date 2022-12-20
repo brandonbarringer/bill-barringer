@@ -8,17 +8,21 @@
     @include container;
   }
 
-  &__content {
-    max-width: rem(800px);
-    margin: 0 auto;
-  }
-
   &__title {
     @include heading(2);
+    margin: 0 auto;
     margin-bottom: rem(40px);
+    max-width: rem(800px);
+    
   }
 
-  &__phone {
+  &__button {
     @extend .button;
+    display: block;
+    text-align: center;
+    transform: scale(.8);
+    text-transform: none;
+    width: max-content;
+    margin: 0 auto;
   }
 }

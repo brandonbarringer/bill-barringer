@@ -55,5 +55,6 @@
   &__label {
     @include heading(4);
     line-height: 1;
+    width: max-content;
   }
 }

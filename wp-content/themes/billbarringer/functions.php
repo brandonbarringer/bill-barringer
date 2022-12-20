@@ -2,6 +2,7 @@
 require_once __DIR__ . '/theme/Helpers.php';
 require_once __DIR__ . '/theme/Assets.php';
 require_once __DIR__ . '/theme/Hooks.php';
+require_once __DIR__ . '/theme/Reviews.php';
 
 // Setup theme
 Hooks::addActions();

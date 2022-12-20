@@ -1,17 +1,25 @@
 <?php  
-  $stats = $args['stats'];
+  $data = Reviews::get();
+  // var_dump($data);
+  $reviews = $data['survey_reviews'];
+  $totalReviews = function ($reviews) {
+    $total5 = (int)$reviews['total_5_star_reviews'];
+    $percent5 = (float)$reviews['total_5_star_percentage'];
+
+    return round($total5 / $percent5 * 100);
+  };
   $stats = [
     [
-      'value' => 220,
+      'value' => $totalReviews($reviews),
       'label' => 'Reviews'
     ],
     [
-      'value' => 4.96,
-      'label' => 'Average'
+      'value' => $reviews['total_5_star_reviews'],
+      'label' => '5 Star'
     ],
     [
-      'value' => 31,
-      'label' => 'Recent'
+      'value' => $reviews['average_score'],
+      'label' => 'Average'
     ],
   ];
 ?>
