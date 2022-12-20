@@ -1,6 +1,5 @@
 <?php  
   $data = Reviews::get();
-  // var_dump($data);
   $reviews = $data['survey_reviews'];
   $totalReviews = function ($reviews) {
     $total5 = (int)$reviews['total_5_star_reviews'];
