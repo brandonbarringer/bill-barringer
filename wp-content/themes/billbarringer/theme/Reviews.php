@@ -24,10 +24,6 @@ class Reviews {
   public static function get() {
     $today = date('Y-m-d');
 
-    $body = self::fetch();
-    update_option('last_review_update', $today);
-    update_option('reviews', $body);
-
     // if the last review was updated more than 24 hours ago, update the reviews
     if ( strtotime($today) - strtotime(get_option('last_review_update')) > 86400 ) {
       $body = self::fetch();
