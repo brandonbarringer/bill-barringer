@@ -7,12 +7,19 @@
   --c-primary: #CCEED3;
   --c-secondary: #CCDCEE;
   --c-light: #E2E2E2;
+  --c-lighter: #F0FEFF;
   --ff-primary: 'Montserrat', sans-serif;
   --fw-bold: 700;
   --fw-normal: 400;
   --fw-regular: 400;
   --fw-semi: 600;
   --fz-body: rem(21px);
+  --g-primary: linear-gradient(
+    to top right,
+    #3020FF,
+    #35ADFC,
+    #B8EFF9
+  );
 }
 
 // Colors

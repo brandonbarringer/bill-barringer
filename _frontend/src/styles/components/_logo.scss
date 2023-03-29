@@ -1,0 +1,11 @@
+.logo {
+  max-width: rem(225px);
+
+  &__symbol {
+    fill: var(--g-primary);
+  }
+
+  &__letters {
+    fill: var(--c-text);
+  }
+}

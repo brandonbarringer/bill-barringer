@@ -1,0 +1,43 @@
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  padding: rem(20px 0);
+
+  a {
+    color: var(--c-lighter);
+    font-weight: var(--fw-semibold);
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: width(227, '%') 1fr;
+  }
+
+  &__toggle {
+    display: none;
+  }
+
+  &__brand {
+    svg {
+      color: var(--c-ligher);
+    }
+  }
+
+  &__menu {
+    place-self: center end;
+    ul {
+      display: flex;
+    }
+
+    li {
+      margin-right: rem(30px);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

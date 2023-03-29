@@ -20,7 +20,7 @@
   
   &:before {
     z-index: -1;
-    background-color: var(--c-white);
+    background: var(--g-primary);
     border-radius: rem(12px);
     transition: all .3s ease;
     clip-path: circle(0% at 50% 50%);
@@ -41,8 +41,21 @@
 
   &--dark {
     &:before {
-      background-color: var(--c-secondary);
+      background: var(--g-primary);
     }
+    &:after {
+      border-radius: rem(12px);
+    }
+  }
+
+  &--light {
+    &:before {
+      background: var(--g-primary);
+    }
+    &:after {
+      background-color: var(--c-lighter);
+    }
+    color: var(--c-text);
   }
 
 }

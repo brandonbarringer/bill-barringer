@@ -1,10 +1,11 @@
 .hero {
-  background-color: var(--c-primary);
+  background-color: var(--c-text);
   background-image: url(../images/hero.png);
   background-size: contain;
   background-position: bottom right;
   background-repeat: no-repeat;
   padding: rem(50px 0 500px 0);
+  color: var(--c-lighter);
 
   @include media('>tiny') {
     background-size: auto 500px;

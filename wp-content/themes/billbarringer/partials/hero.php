@@ -14,7 +14,7 @@
       <p class="hero__text">
         <?= $content ?>
       </p>
-      <?php Helpers::renderPartial('button', array_merge($button, ['class' => 'button--shake'])) ?>
+      <?php Helpers::renderPartial('button', array_merge($button, ['class' => 'button--light'])) ?>
     </div>
   </div>
 </div>

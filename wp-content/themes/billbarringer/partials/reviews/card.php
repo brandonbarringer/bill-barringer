@@ -3,7 +3,6 @@
   $text = nl2br($args['review']);
   $rating = $args['score'];
   $parts = explode('.', $rating);
-  $image = $args['image'];
 ?>
 
 <div class="review-card">
